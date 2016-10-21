@@ -140,8 +140,8 @@ GIOMAR T. ANDRES
 
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
+$nameErr = $emailErr = $genderErr = $websiteErr = $CellphoneErr = $HomeAddressErr = $NickNameErr "";
+$name = $email = $gender = $comment = $website = $NickName = $HomeAddress =$Cellphone "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -161,6 +161,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // check if e-mail address is well-formed
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $emailErr = "Invalid email format"; 
+    }
+  }
+  if (empty($_POST["NickName"])) {
+    $NickName = "NickName is required";
+  } else {
+    $NickName = test_input($_POST["NickName"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $NickNameErr = ""; 
+    }
+  }
+   if (empty($_POST["HomeAddress"])) {
+    $HomeAddressErr = "HomeAddress is required";
+  } else {
+    $HomeAddress = test_input($_POST["HomeAddress"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($HomeAddress, FILTER_VALIDATE_EMAIL)) {
+      $HomeAddressErr = "Invalid email format"; 
+    }
+  }
+   if (empty($_POST["Cellphone"])) {
+    $CellphoneErr = "Cellphone No. is required";
+  } else {
+    $Cellphone = test_input($_POST["Cellphone"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $CellphoneErr = "Invalid Cellphone format"; 
     }
   }
     
@@ -201,8 +228,17 @@ function test_input($data) {
   Name: <input type="text" name="name" value="<?php echo $name;?>">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
+   NickName: <input type="text" name="NickName" value="<?php echo $NickName;?>">
+  <span class="error">* <?php echo $NickNameErr;?></span>
+  <br><br>
   E-mail: <input type="text" name="email" value="<?php echo $email;?>">
   <span class="error">* <?php echo $emailErr;?></span>
+  <br><br>
+   Home Address: <input type="text" name="HomeAddress" value="<?php echo $HomeAddress;?>">
+  <span class="error">* <?php echo $HomeAddressErr;?></span>
+  <br><br>
+   Cellphone No. <input type="text" name="Cellphone" value="<?php echo $Cellphone;?>">
+  <span class="error">* <?php echo $CellphoneErr;?></span>
   <br><br>
   Website: <input type="text" name="website" value="<?php echo $website;?>">
   <span class="error"><?php echo $websiteErr;?></span>
