@@ -40,13 +40,13 @@ if(isset($_POST['btn-save']))
     <td align="center"><a href="index.php">back to main page</a></td>
     </tr>
     <tr>
-    <td><input type="text" name="first_name" placeholder="First Name" required /></td>
+    <td><input type="text" name="Name" placeholder="Name" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="last_name" placeholder="Last Name" required /></td>
+    <td><input type="text" name="Email" placeholder="Email" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="city_name" placeholder="City" required /></td>
+    <td><input type="text" name="Website" placeholder="Website" required /></td>
     </tr>
     <tr>
     <td><button type="submit" name="btn-save"><strong>SAVE</strong></button></td>

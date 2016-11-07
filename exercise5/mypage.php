@@ -1,22 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
-include_once 'dbconfig.php';
-if(isset($_POST['btn-save']))
-{
- // variables for input data
- $first_name = $_POST['first_name'];
- $last_name = $_POST['last_name'];
- $city_name = $_POST['city_name'];
- // variables for input data
- 
- // sql query for inserting data into database
- 
-        $sql_query = "INSERT INTO users(first_name,last_name,user_city) VALUES('$first_name','$last_name','$city_name')";
- mysqli_query($con,$sql_query);
-        
-        // sql query for inserting data into database
- 
-}
+	include_once 'dbconfig.php';
+	if(isset($_POST['submit']))
+		{
+			// variables for input data
+			$name = $_POST['name'];
+			$email = $_POST['email'];
+			$homeA = $_POST['homeA'];
+			$comment = $_POST['comment'];
+			$gender = $_POST['gender'];
+			// variables for input data
+			
+			// sql query for inserting data into database			 
+			$sql_query = "INSERT INTO users(name,email,homeA,gender, message) VALUES ('$name','$email','$homeA','$gender', '$comment')";
+			mysqli_query($con,$sql_query);
+			// sql query for inserting data into database
+		}
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -114,7 +112,7 @@ GIOMAR T. ANDRES
 <img src = "You.jpg" style = "width: 400px; height: 400px">
 
 
-<table align ="right">
+<table align ="Right">
 
 <tr>
 <td>HOBBIES</td>
@@ -135,6 +133,8 @@ GIOMAR T. ANDRES
 <td>Disco Junkie (DJ) </td>
 </tr>
 </table>
+</br>
+</br>
 </br>
 </br>
 
@@ -163,8 +163,8 @@ GIOMAR T. ANDRES
 
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
+$nameErr = $emailErr = $genderErr = $homeAErr = "";
+$name = $email = $gender = $comment = $homeA = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -187,13 +187,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
     
-  if (empty($_POST["website"])) {
-    $website = "";
+  if (empty($_POST["homeA"])) {
+    $homeA = "";
   } else {
-    $website = test_input($_POST["website"]);
-    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-      $websiteErr = "Invalid URL"; 
+    $homeA = test_input($_POST["homeA"]);
     }
   }
 
@@ -204,12 +201,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
+    $genderErr = "gender is required";
   } else {
     $gender = test_input($_POST["gender"]);
   }
-}
-
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -219,26 +214,29 @@ function test_input($data) {
 ?>
 
 <h2>Fill up your online life now!</h2>
-<p><span class="error">* required field.</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  Name: <input type="text" name="name" value="<?php echo $name;?>">
-  <span class="error">* <?php echo $nameErr;?></span>
-  <br><br>
-  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
-  <span class="error">* <?php echo $emailErr;?></span>
-  <br><br>
-  Website: <input type="text" name="website" value="<?php echo $website;?>">
-  <span class="error"><?php echo $websiteErr;?></span>
-  <br><br>
-  Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-  <br><br>
-  Gender:
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
-  <span class="error">* <?php echo $genderErr;?></span>
-  <br><br>
-  <input type="submit" name="submit" value="Submit">  
+<form method="post" >
+			<div class="input">
+				<div class="col1">
+					Name: <input type="text" name="name" value="<?php echo $name;?>">
+					<span class="error">* <?php echo $nameErr;?></span>
+					<br><br>
+					Email: <input type="text" name="email" value="<?php echo $email;?>">
+					<span class="error">* <?php echo $emailErr;?></span>
+					<br><br>
+					homeA: <input type="text" name="homeA" value="<?php echo $homeA;?>">
+					<span class="error"><?php echo $homeAErr;?></span>
+					<br><br>
+					Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+					<br><br>
+					Gender:
+					<input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
+					<input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
+					<span class="error">* <?php echo $genderErr;?></span>
+					<br><br>
+					<input type="submit" name="submit" value="Submit">  
+				</div>
+			</div>
 </form>
-
+<a href="index.php" class=button>MESSAGES ARE HERE DUDE!</a>
 </body>
 </html>
