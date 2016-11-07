@@ -16,13 +16,13 @@
 			// sql query for inserting data into database
 		}
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml">       
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>CRUD Operations With PHP and MySql - By Cleartuts</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 	<head>
 	<title> My Webpage
-	</title>
+	</title>  
 	<style>
 	<html>
 	<head>
