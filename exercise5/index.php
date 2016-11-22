@@ -18,7 +18,7 @@
 			<script type="text/javascript">
 				function edt_id(id)
 					{
-					window.location.href='add_data.php?edit_id='+id;
+					window.location.href='edit_data.php?edit_id='+id;
 					}
 				function delete_id(id)
 					{
@@ -75,7 +75,8 @@
 			<table align="center">
 				<th>NAME</th>
 				<th>EMAIL</th>
-				<th>homeA</th>
+				<th>HOME ADDRESS</th>
+				<th>CellNo.</th>
 				<th>GENDER</th>
 				<th>COMMENTS</th>
 				<th colspan="2">OPERATIONS</th>		
@@ -93,6 +94,7 @@
 					<td><?php echo $row[3]; ?></td>
 					<td><?php echo $row[4]; ?></td>
 					<td><?php echo $row[5]; ?></td>
+					<td><?php echo $row[6]; ?></td>
 					<td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')">EDIT</a></td>
 					<td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')">DELETE</a></td>
 					</tr>

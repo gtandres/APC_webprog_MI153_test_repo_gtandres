@@ -8,10 +8,11 @@
 			$homeA = $_POST['homeA'];
 			$comment = $_POST['comment'];
 			$gender = $_POST['gender'];
+			$cellno = $_POST['cellno'];
 			// variables for input data
 			
 			// sql query for inserting data into database			 
-			$sql_query = "INSERT INTO users(name,email,homeA,gender, message) VALUES ('$name','$email','$homeA','$gender', '$comment')";
+			$sql_query = "INSERT INTO users(Name,Email,HomeAddress,Gender, cellno, Comment) VALUES ('$name','$email','$homeA','$gender',$cellno , '$comment')";
 			mysqli_query($con,$sql_query);
 			// sql query for inserting data into database
 		}
@@ -45,7 +46,7 @@ font-family: "simplifica";
 font-size: 50px;
 }
 a:link {
-    color: black;
+    color: white;
     background-color: transparent;
     text-decoration: none;
 }
@@ -80,7 +81,7 @@ td {
     font-size: 40px;
 }
 button {
-    background-color: black;
+    background-color: transparent;
     color: white;
     border: white;
 	font-family: simplifica;
@@ -95,9 +96,11 @@ button:hover {
 audio{
 	display:none;
 }
-button{
+.button{
 	background-color: transparent;
+	
 }
+
 
 
 </style>
@@ -163,8 +166,8 @@ GIOMAR T. ANDRES
 
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $homeAErr = "";
-$name = $email = $gender = $comment = $homeA = "";
+$nameErr = $emailErr = $genderErr = $homeAErr = $cellnoErr ="";
+$name = $email = $gender = $comment = $homeA = $cellno = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -193,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $homeA = test_input($_POST["homeA"]);
     }
   }
-
+  
   if (empty($_POST["comment"])) {
     $comment = "";
   } else {
@@ -204,6 +207,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $genderErr = "gender is required";
   } else {
     $gender = test_input($_POST["gender"]);
+  }
+   if (empty($_POST["cellno"])) {
+    $cellnoErr = "";
+  } else {
+    $cellno = test_input($_POST["cellno"]);
+	if (!preg_match("[0-9]" , $cellno)) {
+		$cellnoErr = "Only numbers are allowed";
+    }
   }
 function test_input($data) {
   $data = trim($data);
@@ -226,6 +237,9 @@ function test_input($data) {
 					homeA: <input type="text" name="homeA" value="<?php echo $homeA;?>">
 					<span class="error"><?php echo $homeAErr;?></span>
 					<br><br>
+					Cellphon No.: <input type="text" name="cellno" value="<?php echo $cellno;?>">
+					<span class="error">* <?php echo $cellnoErr;?></span>
+					<br><br>
 					Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
 					<br><br>
 					Gender:
@@ -237,6 +251,6 @@ function test_input($data) {
 				</div>
 			</div>
 </form>
-<a href="index.php" class=button>MESSAGES ARE HERE DUDE!</a>
+<a href="index.php" class=button>Data List</a>
 </body>
 </html>

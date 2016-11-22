@@ -14,11 +14,12 @@ if(isset($_POST['btn-update']))
  $homeA = $_POST['homeA'];
  $comment = $_POST['comment'];
  $gender = $_POST['gender'];
+ $cellno = $_POST['cellno'];
  // variables for input data
 
  // sql query for update data into database
-$sql_query = "UPDATE users SET name = '$name' , email = '$email' , 
-		homeA = '$homeA' , gender = '$gender', message = '$comment' WHERE user_id=".$_GET['edit_id'];
+$sql_query = "UPDATE users SET Name = '$name' , Email = '$email' , CellNo = '$cellno', 
+		HomeAddress = '$homeA' , Gender = '$gender', Comment = '$comment' WHERE user_id=".$_GET['edit_id'];
  // sql query for update data into database
  
  // sql query execution function
@@ -99,19 +100,22 @@ if(mysqli_query($con,$sql_query))
 					<div id="content">
 						<form method="post">
 							<b class="lft">Name</b>
-								<input type="text" name="name" value="<?php echo $fetched_row['name']; ?>"/></br></br>
+								<input type="text" name="name" value="<?php echo $fetched_row['Name']; ?>"/></br></br>
 	
 							<b class="lft">Email</b>
-								<input type="text" name="email" value="<?php echo $fetched_row['email']; ?>"/></br></br>
+								<input type="text" name="email" value="<?php echo $fetched_row['Email']; ?>"/></br></br>
     
-							<b class="lft">homeA</b>
-								<input type="text" name="homeA" value="<?php echo $fetched_row['homeA']; ?>" /></br></br>
+							<b class="lft">home Address</b>
+								<input type="text" name="homeA" value="<?php echo $fetched_row['HomeAddress']; ?>" /></br></br>
 	
 							<b class="lft">Gender</b>
-								<input type="text" name="gender" value="<?php echo $fetched_row['gender']; ?>"  /></br></br>
+								<input type="text" name="gender" value="<?php echo $fetched_row['Gender']; ?>"  /></br></br>
 	
 							<b class="lft">Comments</b>
-								<input type="text" name="comment" value="<?php echo $fetched_row['comment']; ?>"  /></br></br>
+								<input type="text" name="comment" value="<?php echo $fetched_row['Comment']; ?>"  /></br></br>
+							
+							<b class="lft">CellNo</b>
+								<input type="text" name="cellno" value="<?php echo $fetched_row['CellNo']; ?>"  /></br></br>
 						
 							<table align="center">
 								<td>								
