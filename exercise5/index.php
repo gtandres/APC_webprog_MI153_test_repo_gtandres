@@ -26,14 +26,20 @@
 					}
 				</script>
 			<style>
+				body{
+					background-image: url("Orangy.jpg");
+				}
 				label{
 					font-family: simplifica;
-					font-size: 48px;
+					font-size: 50px;
+					color : white;
 				}
+	
 				
 				table{
 					font-family: simplifica;
-					font-size: 23px;	
+					font-size: 20px;	
+					color : white;
 				}
 				
 				a:link{
@@ -50,7 +56,7 @@
 				}
 				
 				th{
-					padding:0 35px 0 35px;
+					padding:0 30px 0 35px;
 				}
 				
 				tr{
@@ -74,6 +80,7 @@
 			<br><br>
 			<table align="center">
 				<th>NAME</th>
+				<th>NICKNAME</th>
 				<th>EMAIL</th>
 				<th>HOME ADDRESS</th>
 				<th>CellNo.</th>
@@ -95,6 +102,7 @@
 					<td><?php echo $row[4]; ?></td>
 					<td><?php echo $row[5]; ?></td>
 					<td><?php echo $row[6]; ?></td>
+					<td><?php echo $row[7]; ?></td>
 					<td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')">EDIT</a></td>
 					<td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')">DELETE</a></td>
 					</tr>

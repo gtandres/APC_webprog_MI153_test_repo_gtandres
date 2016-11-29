@@ -10,6 +10,7 @@ if(isset($_POST['btn-update']))
 {
  // variables for input data
  $name = $_POST['name'];
+ $n_name = $_POST['n_name'];
  $email = $_POST['email'];
  $homeA = $_POST['homeA'];
  $comment = $_POST['comment'];
@@ -18,8 +19,8 @@ if(isset($_POST['btn-update']))
  // variables for input data
 
  // sql query for update data into database
-$sql_query = "UPDATE users SET Name = '$name' , Email = '$email' , CellNo = '$cellno', 
-		HomeAddress = '$homeA' , Gender = '$gender', Comment = '$comment' WHERE user_id=".$_GET['edit_id'];
+$sql_query = "UPDATE users SET Name = '$name' , Nickname = '$n_name', Email = '$email' , 
+		HomeAddress = '$homeA' ,  CellNo = '$cellno', Gender = '$gender', Comment = '$comment' WHERE user_id=".$_GET['edit_id'];
  // sql query for update data into database
  
  // sql query execution function
@@ -53,10 +54,11 @@ if(mysqli_query($con,$sql_query))
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 			<title>UPDATE</title>
 			<style>
+				
 				label{
 					font-family: simplifica;
 					font-size: 50px;
-					color: red;
+					color: Black;
 				}
 	
 				input{
@@ -91,21 +93,24 @@ if(mysqli_query($con,$sql_query))
 					width: 100%;
 					clear: both;
 				}
+				
 			</style>
 		</head>
 			<body>
 				<center>
-					<label>NEED TO CHANGE SOMETHING? CHANGE IT HERE!</label>
+					<label>Update your account!</label>
 					<br><br>
 					<div id="content">
 						<form method="post">
 							<b class="lft">Name</b>
 								<input type="text" name="name" value="<?php echo $fetched_row['Name']; ?>"/></br></br>
+							<b class="lft">Nickname</b>
+								<input type="text" name="n_name" value="<?php echo $fetched_row['Nickname']; ?>"/></br></br>
 	
 							<b class="lft">Email</b>
 								<input type="text" name="email" value="<?php echo $fetched_row['Email']; ?>"/></br></br>
     
-							<b class="lft">home Address</b>
+							<b class="lft">Home Address</b>
 								<input type="text" name="homeA" value="<?php echo $fetched_row['HomeAddress']; ?>" /></br></br>
 	
 							<b class="lft">Gender</b>

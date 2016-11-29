@@ -4,6 +4,7 @@
 		{
 			// variables for input data
 			$name = $_POST['name'];
+			$n_name= $_POST['n_name'];
 			$email = $_POST['email'];
 			$homeA = $_POST['homeA'];
 			$comment = $_POST['comment'];
@@ -12,7 +13,7 @@
 			// variables for input data
 			
 			// sql query for inserting data into database			 
-			$sql_query = "INSERT INTO users(Name,Email,HomeAddress,Gender, cellno, Comment) VALUES ('$name','$email','$homeA','$gender',$cellno , '$comment')";
+			$sql_query = "INSERT INTO users(Name,Nickname,Email,HomeAddress, Cellno, Gender,Comment) VALUES ('$name','$n_name','$email','$homeA', '$cellno' , '$gender', '$comment')";
 			mysqli_query($con,$sql_query);
 			// sql query for inserting data into database
 		}
@@ -34,7 +35,7 @@
 color: black;
 text-align : Center;
 font-family: "simplifica";
-font-size: 50px;
+font-size: 40px;
 }
 body{
  background-image: url("Orangy.jpg");
@@ -43,7 +44,7 @@ body {
 color: white;
 text-align : Center;
 font-family: "simplifica";
-font-size: 50px;
+font-size: 40px;
 }
 a:link {
     color: white;
@@ -70,7 +71,7 @@ table, th, td {
 }
 table {
     border-collapse: collapse;
-    width: 50%;
+    width: 40%;
 }
 
 th {
@@ -166,8 +167,8 @@ GIOMAR T. ANDRES
 
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $homeAErr = $cellnoErr ="";
-$name = $email = $gender = $comment = $homeA = $cellno = "";
+$nameErr = $n_nameErr = $emailErr = $genderErr = $homeAErr = $cellnoErr ="";
+$name = $n_name = $email = $gender = $comment = $homeA = $cellno = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -177,6 +178,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
       $nameErr = "Only letters and white space allowed"; 
+    }
+  }
+  if (empty($_POST["n_name"])) {
+    $n_nameErr = "Nickname is required";
+  } else {
+    $n_name = test_input($_POST["n_name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+      $n_nameErr = "Only letters and white space allowed"; 
     }
   }
   
@@ -231,13 +241,16 @@ function test_input($data) {
 					Name: <input type="text" name="name" value="<?php echo $name;?>">
 					<span class="error">* <?php echo $nameErr;?></span>
 					<br><br>
+					Nickname: <input type="text" name="n_name" value="<?php echo $n_name;?>">
+					<span class="error">* <?php echo $n_nameErr;?></span>
+					<br><br>
 					Email: <input type="text" name="email" value="<?php echo $email;?>">
 					<span class="error">* <?php echo $emailErr;?></span>
 					<br><br>
-					homeA: <input type="text" name="homeA" value="<?php echo $homeA;?>">
+					Home Address: <input type="text" name="homeA" value="<?php echo $homeA;?>">
 					<span class="error"><?php echo $homeAErr;?></span>
 					<br><br>
-					Cellphon No.: <input type="text" name="cellno" value="<?php echo $cellno;?>">
+					Cellphone No: <input type="text" name="cellno" value="<?php echo $cellno;?>">
 					<span class="error">* <?php echo $cellnoErr;?></span>
 					<br><br>
 					Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
