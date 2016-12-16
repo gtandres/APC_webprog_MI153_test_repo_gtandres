@@ -64,6 +64,15 @@ class News extends CI_Controller {
             $this->load->view('templates/footer');
         }
     }
+	
+	 public function edit()
+    {
+        $User_ID = $this->uri->segment(3);
+        
+        if (empty($User_ID))
+        {
+            show_404();
+        }
 
 		
 		
