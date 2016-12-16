@@ -22,3 +22,6 @@ class News extends CI_Controller {
     {
         $data['news_item'] = $this->news_model->get_news($User_ID);
 	}
+	
+	  $this->load->view('templates/header', $data);
+      $this->load->view('news/view', $data);
