@@ -53,3 +53,10 @@ class News_model extends CI_Model {
             return $this->db->update('userinfo', $data);
         }
     }
+	
+    public function delete_news($User_ID)
+    {
+        $this->db->where('User_ID', $User_ID);
+        return $this->db->delete('userinfo');
+    }
+}
