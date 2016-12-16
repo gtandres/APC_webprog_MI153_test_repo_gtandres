@@ -88,6 +88,14 @@ class News extends CI_Controller {
 		$this->form_validation->set_rules('Gender', 'Gender', 'required');
         $this->form_validation->set_rules('CP_num', 'Cellphone number');
 		$this->form_validation->set_rules('Comment', 'Comment', 'required');
+		
+		 if ($this->form_validation->run() === FALSE)
+        {
+            $this->load->view('templates/header', $data);
+            $this->load->view('news/edit', $data);
+            $this->load->view('templates/footer');
+ 
+        }
 
 		
 		
