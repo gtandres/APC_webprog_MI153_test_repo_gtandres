@@ -49,3 +49,7 @@ class News_model extends CI_Model {
 		  if ($User_ID == 0) {
             return $this->db->insert('userinfo', $data);
         } else {
+			$this->db->where('User_ID', $User_ID);
+            return $this->db->update('userinfo', $data);
+        }
+    }
