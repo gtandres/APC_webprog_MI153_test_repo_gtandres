@@ -73,6 +73,12 @@ class News extends CI_Controller {
         {
             show_404();
         }
+		
+		   $this->load->helper('form');
+        $this->load->library('form_validation');
+        
+        $data['title'] = 'Edit a news item';        
+        $data['news_item'] = $this->news_model->get_news_by_id($User_ID);
 
 		
 		
