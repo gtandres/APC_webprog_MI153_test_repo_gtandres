@@ -42,3 +42,10 @@ class News extends CI_Controller {
         $this->form_validation->set_rules('Name', 'Name', 'required');
         $this->form_validation->set_rules('Nickname', 'Nickname', 'required');
 		$this->form_validation->set_rules('Email', 'Email', 'required');
+		$this->form_validation->set_rules('Home_Address', 'Home address', 'required');
+		$this->form_validation->set_rules('Gender', 'Gender', 'required');
+		
+		
+		
+		
+		
