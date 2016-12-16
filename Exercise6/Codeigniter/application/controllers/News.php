@@ -96,6 +96,14 @@ class News extends CI_Controller {
             $this->load->view('templates/footer');
  
         }
+		
+		  else
+        {
+            $this->news_model->set_news($User_ID);
+            //$this->load->view('news/success');
+            redirect( base_url() . 'index.php/news');
+        }
+    }
 
 		
 		
