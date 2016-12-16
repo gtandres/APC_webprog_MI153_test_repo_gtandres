@@ -17,3 +17,15 @@ class News_model extends CI_Model {
         $query = $this->db->get_where('userinfo', array('User_ID' => $User_ID));
         return $query->row_array();
     }
+	 
+	 public function get_news_by_id($User_ID = 0)
+    {
+        if ($User_ID === 0)
+        {
+            $query = $this->db->get('userinfo');
+            return $query->result_array();
+        }
+ 
+        $query = $this->db->get_where('userinfo', array('User_ID' => $User_ID));
+        return $query->row_array();
+    }
