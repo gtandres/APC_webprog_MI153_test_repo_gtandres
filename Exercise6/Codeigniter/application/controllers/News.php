@@ -48,6 +48,15 @@ class News extends CI_Controller {
 		$this->form_validation->set_rules('Comment', 'Comment', 'required');
 		
 		
+        if ($this->form_validation->run() === FALSE)
+        {
+            $this->load->view('templates/header', $data);
+            $this->load->view('news/create');
+            $this->load->view('templates/footer');
+ 
+        }
+		
+		
 		
 		
 		
