@@ -79,6 +79,15 @@ class News extends CI_Controller {
         
         $data['title'] = 'Edit a news item';        
         $data['news_item'] = $this->news_model->get_news_by_id($User_ID);
+		
+		 
+        $this->form_validation->set_rules('Name', 'Name', 'required');
+        $this->form_validation->set_rules('Nickname', 'Nickname', 'required');
+		$this->form_validation->set_rules('Email', 'Email', 'required');
+        $this->form_validation->set_rules('Home_Address', 'Home address', 'required');
+		$this->form_validation->set_rules('Gender', 'Gender', 'required');
+        $this->form_validation->set_rules('CP_num', 'Cellphone number');
+		$this->form_validation->set_rules('Comment', 'Comment', 'required');
 
 		
 		
