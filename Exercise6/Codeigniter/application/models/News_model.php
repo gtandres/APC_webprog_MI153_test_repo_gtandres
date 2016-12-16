@@ -45,3 +45,7 @@ class News_model extends CI_Model {
 			'Cp_Num' => $this->input->post('Cp_Num'),
 			'Comment' => $this->input->post('Comment')
         );
+		
+		  if ($User_ID == 0) {
+            return $this->db->insert('userinfo', $data);
+        } else {
