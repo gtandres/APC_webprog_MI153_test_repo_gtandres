@@ -29,3 +29,19 @@ class News_model extends CI_Model {
         $query = $this->db->get_where('userinfo', array('User_ID' => $User_ID));
         return $query->row_array();
     }
+	 public function set_news($User_ID = 0)
+    {
+        $this->load->helper('url');
+ 
+        $slug = url_title($this->input->post('title'), 'dash', TRUE);
+ 
+        $data = array(
+            'User_ID' => $User_ID,
+			'Name' => $this->input->post('Name'),
+            'Nickname' => $this->input->post('Nickname'),
+			'Email' => $this->input->post('Email'),
+			'Home_Address' => $this->input->post('Home_Address'),
+			'Gender' => $this->input->post('Gender'),
+			'Cp_Num' => $this->input->post('Cp_Num'),
+			'Comment' => $this->input->post('Comment')
+        );
