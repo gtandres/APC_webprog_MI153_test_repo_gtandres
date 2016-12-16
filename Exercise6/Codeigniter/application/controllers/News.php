@@ -104,6 +104,23 @@ class News extends CI_Controller {
             redirect( base_url() . 'index.php/news');
         }
     }
+	
+	   
+    public function delete()
+    {
+        $User_ID = $this->uri->segment(3);
+        
+        if (empty($User_ID))
+        {
+            show_404();
+        }
+                
+        $news_item = $this->news_model->get_news_by_id($User_ID);
+        
+        $this->news_model->delete_news($User_ID);        
+        redirect( base_url() . 'index.php/news');        
+    }
+}
 
 		
 		
