@@ -21,6 +21,10 @@ class News extends CI_Controller {
 	 public function view($User_ID = NULL)
     {
         $data['news_item'] = $this->news_model->get_news($User_ID);
+		
+	 if (empty($data['news_item']))
+        {
+            show_404();
 	}
 	
 	  $this->load->view('templates/header', $data);
