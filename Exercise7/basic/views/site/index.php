@@ -12,6 +12,7 @@ $this->title = 'Exercise 7';
         <p class="lead">Hi! This my EXERCISE 7 Webprog </p>
 		<p> Want to learn how Yii works?, Click the button now!</p>
         <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+		<P> Navigate above to learn more about Yii!</P>
     </div>
 
     <div class="body-content">
