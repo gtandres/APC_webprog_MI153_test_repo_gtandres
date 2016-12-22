@@ -91,14 +91,14 @@
 			<button type="button" onclick="document.getElementById('q4').innerHTML = 'Information Technology major in Mobile and internet technology'">Click to see answer</button>
 
 			<p>
-				5. Best Trait?
+				5. Where do you study?
 			</p>
 
 			<p id="q5">
 				ANSWER
 			</p>
 
-			<button type="button" onclick="document.getElementById('q5').innerHTML = 'Chill'">Click to see answer</button>
+			<button type="button" onclick="document.getElementById('q5').innerHTML = 'Asia Pacific College'">Click to see answer</button>
 
 
 			
