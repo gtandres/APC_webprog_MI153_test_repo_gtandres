@@ -51,7 +51,7 @@
 			<button type="button" onclick="document.getElementById('q5').innerHTML = 'Chill'">Click to see answer</button>
 			
 				<p>
-				1. Favorate Gaming company
+				1. Favorate Gaming company?
 			</p>
 
 			<p id="q1">
@@ -61,14 +61,14 @@
 			<button type="button" onclick="document.getElementById('q1').innerHTML = 'Square Enix'">Click to see answer</button>
 			
 			<p>
-				2. What country do you want to visit the most?
+				2. What games do you usually play?
 			</p>
 
 			<p id="q2">
 				ANSWER
 			</p>
 
-			<button type="button" onclick="document.getElementById('q2').innerHTML = 'JAPAN'">Click to see answer</button>
+			<button type="button" onclick="document.getElementById('q2').innerHTML = 'RPG, Shooting GAMES'">Click to see answer</button>
 
 			<p>
 				3. What other professions do you want?
