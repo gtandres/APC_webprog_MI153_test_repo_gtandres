@@ -51,54 +51,54 @@
 			<button type="button" onclick="document.getElementById('q5').innerHTML = 'Chill'">Click to see answer</button>
 			
 				<p>
-				1. Favorate Gaming company?
+				6. Favorate Gaming company?
 			</p>
 
-			<p id="q1">
+			<p id="q6">
 				ANSWER
 			</p>
 
-			<button type="button" onclick="document.getElementById('q1').innerHTML = 'Square Enix'">Click to see answer</button>
+			<button type="button" onclick="document.getElementById('q6').innerHTML = 'Square Enix'">Click to see answer</button>
 			
 			<p>
-				2. What games do you usually play?
+				7. What games do you usually play?
 			</p>
 
-			<p id="q2">
+			<p id="q7">
 				ANSWER
 			</p>
 
-			<button type="button" onclick="document.getElementById('q2').innerHTML = 'RPG/Moba or Shooting games'">Click to see answer</button>
+			<button type="button" onclick="document.getElementById('q7').innerHTML = 'RPG/Moba or Shooting games'">Click to see answer</button>
 
 			<p>
-				3. Favorate Basketball shoes brand
+				8. Favorate Basketball shoes brand
 			</p>
 
-			<p id="q3">
+			<p id="q8">
 				ANSWER
 			</p>
 
-			<button type="button" onclick="document.getElementById('q3').innerHTML = 'Nike'">Click to see answer</button>
+			<button type="button" onclick="document.getElementById('q8').innerHTML = 'Nike'">Click to see answer</button>
 
 			<p>
-				4. What is your course?
+				9. What is your course?
 			</p>
 
-			<p id="q4">
+			<p id="q9">
 				ANSWER
 			</p>
 
-			<button type="button" onclick="document.getElementById('q4').innerHTML = 'Information Technology major in Mobile and internet technology'">Click to see answer</button>
+			<button type="button" onclick="document.getElementById('q9').innerHTML = 'Information Technology major in Mobile and internet technology'">Click to see answer</button>
 
 			<p>
-				5. Where do you study?
+				10. Where do you study?
 			</p>
 
-			<p id="q5">
+			<p id="q10">
 				ANSWER
 			</p>
 
-			<button type="button" onclick="document.getElementById('q5').innerHTML = 'Asia Pacific College'">Click to see answer</button>
+			<button type="button" onclick="document.getElementById('q10').innerHTML = 'Asia Pacific College'">Click to see answer</button>
 
 
 			
