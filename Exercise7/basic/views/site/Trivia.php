@@ -81,14 +81,14 @@
 			<button type="button" onclick="document.getElementById('q3').innerHTML = 'Nike'">Click to see answer</button>
 
 			<p>
-				4. What do you find most satisfying?
+				4. What is your course?
 			</p>
 
 			<p id="q4">
 				ANSWER
 			</p>
 
-			<button type="button" onclick="document.getElementById('q4').innerHTML = 'Winning'">Click to see answer</button>
+			<button type="button" onclick="document.getElementById('q4').innerHTML = 'Information Technology major in Mobile and internet technology'">Click to see answer</button>
 
 			<p>
 				5. Best Trait?
