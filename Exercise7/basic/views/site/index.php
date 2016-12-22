@@ -35,7 +35,7 @@ $this->title = 'Exercise 7';
             <div class="col-lg-4">
                 <h2>Heading</h2>
 
-                <p></p>
+                <p>Send details about yourself. saving your personal information</p>
 
                 <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
             </div>
