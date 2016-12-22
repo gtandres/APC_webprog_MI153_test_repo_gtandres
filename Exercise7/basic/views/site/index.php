@@ -21,7 +21,7 @@ $this->title = 'Exercise 7';
             <div class="col-lg-4">
                 <h2>Heading</h2>
 
-                <p></p>
+                <p>View out the website's creator details</p>
 
                 <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
             </div>
