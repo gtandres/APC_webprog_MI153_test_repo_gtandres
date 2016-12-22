@@ -71,14 +71,14 @@
 			<button type="button" onclick="document.getElementById('q2').innerHTML = 'RPG/Moba or Shooting games'">Click to see answer</button>
 
 			<p>
-				3. What other professions do you want?
+				3. Favorate Basketball shoes brand
 			</p>
 
 			<p id="q3">
 				ANSWER
 			</p>
 
-			<button type="button" onclick="document.getElementById('q3').innerHTML = 'Professional DJ, Character Designer, Game Analyst, Professional Basketball player'">Click to see answer</button>
+			<button type="button" onclick="document.getElementById('q3').innerHTML = 'Nike'">Click to see answer</button>
 
 			<p>
 				4. What do you find most satisfying?
