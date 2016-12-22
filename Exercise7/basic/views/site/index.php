@@ -10,7 +10,7 @@ $this->title = 'Exercise 7';
         <h1>Congratulations!</h1>
 
         <p class="lead">Hi! This my EXERCISE 7 Webprog </p>
-		<p> </p>
+		<p> Want to learn how Yii works?, Click the button now!</p>
         <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
     </div>
 
