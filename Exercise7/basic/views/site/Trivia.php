@@ -68,7 +68,7 @@
 				ANSWER
 			</p>
 
-			<button type="button" onclick="document.getElementById('q2').innerHTML = 'RPG, Shooting GAMES'">Click to see answer</button>
+			<button type="button" onclick="document.getElementById('q2').innerHTML = 'RPG/Moba or Shooting games'">Click to see answer</button>
 
 			<p>
 				3. What other professions do you want?
