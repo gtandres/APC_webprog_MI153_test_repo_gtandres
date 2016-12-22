@@ -28,7 +28,7 @@ $this->title = 'Exercise 7';
             <div class="col-lg-4">
                 <h2>Heading</h2>
 
-                <p></p>
+                <p>See for yourself who the creator is</p>
 
                 <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
             </div>
