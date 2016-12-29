@@ -1,71 +1,45 @@
-<style>
-	table,h1,input{
-		font-family: simplifica;
-		text-align: center;
-	}
-	
-	table{
-		font-size: 38px;
-	}
-	
-	input{
-		font-size: 38px;
-	}
-	
-	.button{
-		background-color: white;
-		color: black;
-		border: white;
-		font-family: simplifica;
-		font-size: 32px;
-		text-align: center;
-	}
-	
-	.button:hover{
-		background-color: white;
-		color: red;
-	}
+<h2><?php echo $title; ?></h2>
+ 
+<?php echo validation_errors(); ?>
+ <style>
+	body{
+			background-image: url(<?=base_url()?>Images/Orangy.jpg);
+			color: white;
+		}
 		</style>
-				
-	
-					<h1>Update your account!</h1>
-					<?php echo validation_errors(); ?>
-					<?php echo form_open('news/edit/'.$news_item['User_ID']); ?>
-					<br><br>
-					<div id="content">
-						<form method="post">
-							<b class="lft">Name</b>
-								 <td><input type="text" name="name" rows="10" cols="40"><?php echo $news_item['name'] ?></input></td>
-							<b class="lft">Nickname</b>
-							 <td><input type="text" name="n_name" rows="10" cols="40"><?php echo $news_item['Nickname'] ?></input></td>
-						
-	
-							<b class="lft">Email</b>
-							 <td><input type="text" name="email" rows="10" cols="40"><?php echo $news_item['Email'] ?></input></td>
-		
-    
-							<b class="lft">Home Address</b>
-							 <td><input type="text" name="homeA" rows="10" cols="40"><?php echo $news_item['HomeAddress'] ?></input></td>
-								
-							<b class="lft">Gender</b>
-								 <td><input type="text" name="gender" rows="10" cols="40"><?php echo $news_item['Gender'] ?></input></td>
-						
-	
-							<b class="lft">Comments</b>
-								 <td><input type="text" name="comment" rows="10" cols="40"><?php echo $news_item['Comment'] ?></input></td>
-							
-							<b class="lft">CellNo</b>
-							 <td><input type="text" name="cellno" rows="10" cols="40"><?php echo $news_item['CellNo'] ?></input></td>
-						
-						
-							<table align="center">
-								<td>								
-								<button type="submit" name="btn-update"><strong>UPDATE</strong></button>
-								<button type="submit" name="btn-cancel"><strong>CANCEL</strong></button>
-								</td>
-							</table>
-						</form>
-					</div>
-				</center>
-			</body>
-	</html>
+<?php echo form_open('news/edit/'.$news_item['User_ID']); ?>
+	<table>
+        <tr>
+            <td><label for="Name">Name</label></td>
+            <td><textarea name="Name" rows="10" cols="40"><?php echo $news_item['Name'] ?></textarea></td>
+        </tr>
+        <tr>
+            <td><label for="Nickname">Nickname</label></td>
+            <td><textarea name="Nickname" rows="10" cols="40"><?php echo $news_item['Nickname'] ?></textarea></td>
+        </tr>
+		<tr>
+            <td><label for="Email">Email</label></td>
+            <td><textarea name="Email" rows="10" cols="40"><?php echo $news_item['Email'] ?></textarea></td>
+        </tr>
+		<tr>
+            <td><label for="Home_Address">Home Address</label></td>
+            <td><textarea name="Home_Address" rows="10" cols="40"><?php echo $news_item['Home_Address'] ?></textarea></td>
+        </tr>
+		<tr>
+            <td><label for="Gender">Gender</label></td>
+            <td><textarea name="Gender" rows="10" cols="40"><?php echo $news_item['Gender'] ?></textarea></td>
+        </tr>
+		<tr>
+            <td><label for="Cp_Num">Cellphone number</label></td>
+            <td><textarea name="Cp_Num" rows="10" cols="40"><?php echo $news_item['Cp_Num'] ?></textarea></td>
+        </tr>
+		<tr>
+            <td><label for="Comment">Comment</label></td>
+            <td><textarea name="Comment" rows="10" cols="40"><?php echo $news_item['Comment'] ?></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" name="submit" value="Edit news item" /></td>
+        </tr>
+    </table>
+</form>

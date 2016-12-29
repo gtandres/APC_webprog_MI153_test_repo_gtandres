@@ -1,14 +1,20 @@
+<style>
+	body{
+			background-image: url(<?=base_url()?>Images/Orangy.jpg);
+			color: white;
+		}
+		</style>
 <?php
-echo $news_item['name'];
+echo $news_item['Name'];
 echo "<br>";
-echo $news_item['n_name'];
+echo $news_item['Nickname'];
 echo "<br>";
-echo $news_item['email'];
+echo $news_item['Email'];
 echo "<br>";
-echo $news_item['homeA'];
+echo $news_item['Home_Address'];
 echo "<br>";
-echo $news_item['gender'];
+echo $news_item['Gender'];
 echo "<br>";
-echo $news_item['cellno'];
+echo $news_item['Cp_Num'];
 echo "<br>";
-echo $news_item['comment'];
+echo $news_item['Comment'];
