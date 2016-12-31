@@ -8,7 +8,6 @@ use app\models\UserinfoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
 
 /**
  * UserinfoController implements the CRUD actions for Userinfo model.

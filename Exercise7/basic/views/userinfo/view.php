@@ -32,9 +32,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'Name',
             'Nickname',
             'Email:email',
-            'HomeAddress',
+            'Home_Address',
             'Gender',
-            'CellNo',
+            'Cp_Num',
             'Comment',
         ],
     ]) ?>

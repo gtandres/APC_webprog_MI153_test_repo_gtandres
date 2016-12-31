@@ -18,11 +18,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'Email')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'HomeAddress')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Home_Address')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'Gender')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'CellNo')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Cp_Num')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'Comment')->textInput(['maxlength' => true]) ?>
 

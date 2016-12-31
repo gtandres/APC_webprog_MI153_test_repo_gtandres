@@ -7,8 +7,6 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\Userinfo;
-use app\models\Site;
-use app\models\ActiveForm;
 use app\models\UserinfoSearch;
 
 class SiteController extends Controller
